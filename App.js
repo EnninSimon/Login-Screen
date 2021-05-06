@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, FlatList } from 'react-native';
 import LoginScreen from './LoginScreen';
+import SignUpScreen from './SignUpScreen';
 import ContactScreen from './ContactsScreen';
 import Contact from './Components/Contact';
 
@@ -22,7 +23,9 @@ class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-      <ContactScreen />
+      {/* <ContactScreen /> */}
+      <SignUpScreen />
+
 
 
 
