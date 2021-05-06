@@ -5,6 +5,7 @@ import LoginScreen from './LoginScreen';
 import SignUpScreen from './SignUpScreen';
 import ContactScreen from './ContactsScreen';
 import Contact from './Components/Contact';
+import PetsScreen from './PetsScreen';
 
 class App extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class App extends Component {
     return (
       <View style={styles.container}>
       {/* <ContactScreen /> */}
-      <SignUpScreen />
+      <PetsScreen/>
 
 
 
