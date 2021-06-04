@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, FlatList, Text } from 'react-native';
-import Contact from './Components/Contact';
+import Contact from './Contact';
 
 export default function ContactScreen() {
     const contacts = [

@@ -5,7 +5,7 @@ import { MaterialIcons, MaterialCommunityIcons, SimpleLineIcons } from '@expo/ve
 export default function Contact({name, phone}) {
     return (
         <View style={styles.container}>
-            <Image style={styles.image} source={require('../assets/profile.jpg')}/>
+            <Image style={styles.image} source={require('../../assets/profile.jpg')}/> 
             <View style={styles.infoContainer}>
                 <Text numberOfLines={1} style={styles.name}>{name}</Text>
                 <Text>{phone}</Text>

@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Provider } from 'react-redux';
-import AppContainer from './Components/Navigation/navigation';
-import { store, persistor } from './Components/redux/store';
-import { PersistGate } from 'redux-persist/integration/react'
-
+import LoginScreen from '../Screens/LoginScreen';
+import SignUpScreen from '../Screens/SignUpScreen';
+import ContactsScreen from '../Screens/ContactsScreen';
+import {connect} from 'react-redux';
 
 
 
 const Stack = createStackNavigator();
 
-class App extends Component {
+class AppContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -28,11 +28,13 @@ class App extends Component {
 
   render() {
     return (
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <AppContainer />
-        </PersistGate>
-      </Provider>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name="LoginScreen" component={LoginScreen} options={{headerShown: false}} />
+            <Stack.Screen name="SignupScreen" component={SignUpScreen} options={{headerShown: false}}/>
+            <Stack.Screen name="ContactsScreen" component={ContactsScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
     );
   }
 }
@@ -62,4 +64,8 @@ const styles = StyleSheet.create({
 
 });
 
-export default App;
+const mapStateToProp = (state) => {
+  return { auth: state }
+}
+
+export default  connect(mapStateToProp)(AppContainer);
